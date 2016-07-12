@@ -14,6 +14,8 @@
 		08A2744E1D34E2C300164A40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08A2744C1D34E2C300164A40 /* LaunchScreen.storyboard */; };
 		08A274591D34E2C300164A40 /* KeepAccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A274581D34E2C300164A40 /* KeepAccountTests.swift */; };
 		08A274641D34E2C300164A40 /* KeepAccountUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A274631D34E2C300164A40 /* KeepAccountUITests.swift */; };
+		08A274721D34E95400164A40 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A274711D34E95400164A40 /* AccountViewController.swift */; };
+		08A274761D3502DF00164A40 /* ChoiceObjectText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A274751D3502DF00164A40 /* ChoiceObjectText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		08A2745F1D34E2C300164A40 /* KeepAccountUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeepAccountUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A274631D34E2C300164A40 /* KeepAccountUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepAccountUITests.swift; sourceTree = "<group>"; };
 		08A274651D34E2C300164A40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08A274711D34E95400164A40 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		08A274751D3502DF00164A40 /* ChoiceObjectText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceObjectText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +104,11 @@
 				08A274431D34E2C300164A40 /* AppDelegate.swift */,
 				08A274451D34E2C300164A40 /* ViewController.swift */,
 				08A274471D34E2C300164A40 /* Main.storyboard */,
+				08A274711D34E95400164A40 /* AccountViewController.swift */,
 				08A2744A1D34E2C300164A40 /* Assets.xcassets */,
 				08A2744C1D34E2C300164A40 /* LaunchScreen.storyboard */,
 				08A2744F1D34E2C300164A40 /* Info.plist */,
+				08A274751D3502DF00164A40 /* ChoiceObjectText.swift */,
 			);
 			path = KeepAccount;
 			sourceTree = "<group>";
@@ -256,7 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08A274761D3502DF00164A40 /* ChoiceObjectText.swift in Sources */,
 				08A274461D34E2C300164A40 /* ViewController.swift in Sources */,
+				08A274721D34E95400164A40 /* AccountViewController.swift in Sources */,
 				08A274441D34E2C300164A40 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
