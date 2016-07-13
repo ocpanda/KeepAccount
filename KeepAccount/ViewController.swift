@@ -14,19 +14,13 @@ protocol ChoiceObjectText{
 */
 
 class ViewController: UIViewController{
-    let choice = NSUserDefaults.standardUserDefaults()
-    var sendText:((clicked: NSString) -> Void)?
-    var delegate:ChoiceObjectText?
-    
     @IBOutlet weak var foodObj: UIButton!
     @IBOutlet weak var trafficObj: UIButton!
     @IBOutlet weak var dailyObj: UIButton!
     @IBOutlet weak var funObj: UIButton!
     @IBOutlet weak var otherObj: UIButton!
     
-    func setTitleText(text: String) {
-        
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,43 +33,34 @@ class ViewController: UIViewController{
     }
 
     @IBAction func foodAccount(sender: UIButton) {
-        self.delegate!.setTitleText(foodObj.titleLabel!.text!)
-        /*if(delegate != nil){
-            delegate?.setTitleText(foodObj.titleLabel!.text!)
-        }*/
-        //self.sendText!(clicked: foodObj.titleLabel!.text!)
+        self.sendText(0)
+
     }
 
     @IBAction func dailyAccount(sender: UIButton) {
-        self.delegate!.setTitleText(dailyObj.titleLabel!.text!)
-        /*if(delegate != nil){
-            delegate?.setTitleText(dailyObj.titleLabel!.text!)
-        }*/
-        //self.sendText!(clicked: dailyObj.titleLabel!.text!)
+        self.sendText(2)
+
     }
     
     @IBAction func traffucAccount(sender: UIButton) {
-        self.delegate!.setTitleText(trafficObj.titleLabel!.text!)
-        /*if(delegate != nil){
-            delegate?.setTitleText(trafficObj.titleLabel!.text!)
-        }*/
-        //self.sendText!(clicked: trafficObj.titleLabel!.text!)
+        self.sendText(1)
+
     }
     
     @IBAction func funAccount(sender: UIButton) {
-        self.delegate!.setTitleText(funObj.titleLabel!.text!)
-        /*if(delegate != nil){
-            delegate?.setTitleText(funObj.titleLabel!.text!)
-        }*/
-        //self.sendText!(clicked: funObj.titleLabel!.text!)
+        self.sendText(3)
+
     }
     
     @IBAction func otherAccount(sender: UIButton) {
-        self.delegate!.setTitleText(otherObj.titleLabel!.text!)
-        /*if(delegate != nil){
-            delegate?.setTitleText(otherObj.titleLabel!.text!)
-        }*/
-        //self.sendText!(clicked: otherObj.titleLabel!.text!)
+        self.sendText(4)
+
+    }
+    
+    func sendText(temp: Int){
+        let user = NSUserDefaults.standardUserDefaults()
+        user.setInteger(temp, forKey: "MYKEY")
+        user.synchronize()
     }
 }
 
