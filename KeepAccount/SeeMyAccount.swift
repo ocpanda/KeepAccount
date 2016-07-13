@@ -9,14 +9,20 @@
 import UIKit
 
 class SeeMyAccount: UIViewController{
-    @IBOutlet weak var labelTitle: UILabel!
-    @IBOutlet weak var object: UITextField!
-    @IBOutlet weak var price: UITextField!
+    @IBOutlet weak var dataView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view, typically from a nib.
+        dataView.editable = false
+        let user = NSUserDefaults.standardUserDefaults()
+        let data = user.stringArrayForKey("recData")
+        //print(data)
+        if(data != nil){
+            for userData in data!{
+                dataView.text = dataView.text.stringByAppendingString(userData)
+            }
+        }
     }
     
     override func viewDidAppear(animated: Bool) {

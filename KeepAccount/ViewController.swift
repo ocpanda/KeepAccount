@@ -19,12 +19,32 @@ class ViewController: UIViewController{
     @IBOutlet weak var dailyObj: UIButton!
     @IBOutlet weak var funObj: UIButton!
     @IBOutlet weak var otherObj: UIButton!
-    
-
+    var myRecVal: Dictionary<String, String> = [:]
+    var typeList: Array<String> = ["食物", "交通", "生活", "娛樂", "雜費"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        /*let alert = UIAlertController(title: "警告", message: "此應用程式不得關閉 否則資料會全部遺失", preferredStyle: UIAlertControllerStyle.Alert)
+        let okayButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel
+            , handler:nil)
+        alert.addAction(okayButton)
+        presentViewController(alert, animated: true, completion: nil)*/
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        let user = NSUserDefaults.standardUserDefaults()
+        let check = user.integerForKey("check")
+        print(check)
+        if(check == 1){
+            let data = user.stringForKey("USERDATA")
+            let titleNum = user.integerForKey("MYKEY")
+            //print(data)
+            myRecVal[typeList[titleNum]]? += data!
+            print(myRecVal)
+            user.setInteger(0, forKey: "check")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,6 +75,12 @@ class ViewController: UIViewController{
     @IBAction func otherAccount(sender: UIButton) {
         self.sendText(4)
 
+    }
+    
+    @IBAction func recOnClick(sender: UIButton) {
+        let user = NSUserDefaults.standardUserDefaults()
+        user.setObject(myRecVal, forKey: "recData")
+        user.synchronize()
     }
     
     func sendText(temp: Int){

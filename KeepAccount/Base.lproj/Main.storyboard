@@ -67,6 +67,7 @@
                                 <animations/>
                                 <state key="normal" title="紀錄"/>
                                 <connections>
+                                    <action selector="recOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hga-eW-KpD"/>
                                     <segue destination="byg-wn-a3t" kind="show" id="H37-fc-sdO"/>
                                 </connections>
                             </button>
@@ -240,24 +241,9 @@
                                             <action selector="recordOnClick:" destination="zCg-e6-ZBb" eventType="touchUpInside" id="QtG-hB-aVm"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdd-aM-1DJ">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="179" y="348" width="42" height="21"/>
-                                        </variation>
-                                    </label>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="qdd-aM-1DJ" secondAttribute="trailing" constant="179" id="0jN-Oa-ceW"/>
-                                    <constraint firstAttribute="bottom" secondItem="qdd-aM-1DJ" secondAttribute="bottom" constant="431" id="d9J-xt-jGd"/>
-                                    <constraint firstItem="qdd-aM-1DJ" firstAttribute="leading" secondItem="mTA-J8-5Yx" secondAttribute="leading" constant="179" id="wPX-SW-7lA"/>
-                                </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="dTm-Sv-D0F"/>
@@ -266,15 +252,9 @@
                                         <exclude reference="YhY-i8-NAG"/>
                                         <exclude reference="5IR-NW-fdv"/>
                                         <exclude reference="TMa-dP-azz"/>
-                                        <exclude reference="qdd-aM-1DJ"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <exclude reference="0jN-Oa-ceW"/>
-                                        <exclude reference="d9J-xt-jGd"/>
-                                        <exclude reference="wPX-SW-7lA"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
                                     <mask key="subviews">
                                         <include reference="dTm-Sv-D0F"/>
@@ -283,12 +263,6 @@
                                         <include reference="YhY-i8-NAG"/>
                                         <include reference="5IR-NW-fdv"/>
                                         <include reference="TMa-dP-azz"/>
-                                        <include reference="qdd-aM-1DJ"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <include reference="0jN-Oa-ceW"/>
-                                        <include reference="d9J-xt-jGd"/>
-                                        <include reference="wPX-SW-7lA"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -307,7 +281,6 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="errMsg" destination="qdd-aM-1DJ" id="Jlb-Cq-5wV"/>
                         <outlet property="labelTitle" destination="5IR-NW-fdv" id="00f-ZU-7Uu"/>
                         <outlet property="object" destination="dTm-Sv-D0F" id="Yx2-D3-oYl"/>
                         <outlet property="price" destination="afG-bb-LGN" id="QPB-iY-O2n"/>
@@ -388,6 +361,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="dataView" destination="ZrC-yj-NLL" id="ki1-T9-GY7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DsO-oN-NoD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
