@@ -11,6 +11,8 @@ import UIKit
 class SeeMyAccount: UIViewController{
     @IBOutlet weak var dataView: UITextView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

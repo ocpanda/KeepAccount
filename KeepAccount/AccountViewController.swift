@@ -37,12 +37,12 @@ class AccountViewController: UIViewController{
     }
     
     func getUserInputData(objTemp:String?, price:String?){
-        if(objTemp != "" || price != ""){
+        if(objTemp != "" && price != ""){
             if let priceVal = Int(price!){
                 //print(objTemp)
                 print(priceVal)
                 let user = NSUserDefaults.standardUserDefaults()
-                let sendValue: String="項目: "+objTemp!+" 價格: "+price!+"\n"
+                let sendValue: String=labelTitle.text!+"-項目: "+objTemp!+" 價格: "+price!+"\n"
                 user.setObject(sendValue, forKey: "USERDATA")
                 user.setInteger(1, forKey: "check")
                 user.setObject(labelTitle.text!, forKey: "dataTitle")

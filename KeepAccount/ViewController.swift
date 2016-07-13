@@ -19,8 +19,8 @@ class ViewController: UIViewController{
     @IBOutlet weak var dailyObj: UIButton!
     @IBOutlet weak var funObj: UIButton!
     @IBOutlet weak var otherObj: UIButton!
-    var myRecVal: Dictionary<String, String> = [:]
-    var typeList: Array<String> = ["食物", "交通", "生活", "娛樂", "雜費"]
+    var myRecVal: Array<String> = []
+    var typeList: Array<String> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +39,8 @@ class ViewController: UIViewController{
         print(check)
         if(check == 1){
             let data = user.stringForKey("USERDATA")
-            let titleNum = user.integerForKey("MYKEY")
             //print(data)
-            myRecVal[typeList[titleNum]]? += data!
+            myRecVal.append(data!)
             print(myRecVal)
             user.setInteger(0, forKey: "check")
         }
